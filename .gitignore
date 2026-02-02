@@ -1,0 +1,23 @@
+# Claude local testing (skills copied here for SDK testing)
+.claude/
+
+# macOS
+.DS_Store
+
+# Environment files (each user creates their own)
+.env
+*.env
+!.env.example
+
+# Node.js
+node_modules/
+
+# Next.js
+.next/
+
+# Todo folder
+todo/
+
+# Screenshots and clips output
+**/app/screenshots/
+**/app/clips/

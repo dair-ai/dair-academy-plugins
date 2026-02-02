@@ -1,0 +1,15 @@
+{
+  "name": "dair-academy-plugins",
+  "owner": {
+    "name": "DAIR.AI",
+    "email": "hello@dair.ai"
+  },
+  "plugins": [
+    {
+      "name": "image-generator",
+      "source": "./plugins/image-generator",
+      "description": "Generate and edit images using Gemini's Nano Banana Pro model with text-to-image, editing, and multi-image composition",
+      "author": { "name": "DAIR.AI" }
+    }
+  ]
+}
