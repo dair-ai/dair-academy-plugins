@@ -1,7 +1,7 @@
 {
   "name": "image-generator",
   "description": "Generate and edit images using Gemini's Nano Banana Pro (gemini-3-pro-image-preview) model",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "author": {
     "name": "DAIR.AI"
   }

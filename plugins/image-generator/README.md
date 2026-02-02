@@ -77,5 +77,5 @@ The `gemini-3-pro-image-preview` (Nano Banana Pro) model features:
 
 ## Version
 
-- Version: 1.0.0
+- Version: 1.1.1
 - Author: DAIR.AI
