@@ -10,45 +10,35 @@ This skill generates and edits images using Google's Gemini Nano Banana Pro mode
 
 ## IMPORTANT: Setup Required
 
-Before using this skill, the user must configure their Gemini API key:
+Before using this skill, the user must set the `GEMINI_API_KEY` environment variable:
 
 1. Get a free API key from [Google AI Studio](https://aistudio.google.com/)
-2. Navigate to the skill folder and create a `.env` file:
+2. Export the key in your shell profile (`~/.zshrc`, `~/.bashrc`, etc.):
    ```bash
-   cd /path/to/plugins/image-generator/skills/image-generator/
-   cp .env.example .env
+   export GEMINI_API_KEY="your_api_key_here"
    ```
-3. Edit `.env` and add your API key:
-   ```
-   GEMINI_API_KEY=your_actual_api_key_here
-   ```
+3. Restart your terminal or run `source ~/.zshrc` (or `~/.bashrc`)
 
 **The skill will not work without this configuration.**
+
+## Pre-flight Check
+
+Before making any API call, verify the key is set:
+
+```bash
+if [ -z "$GEMINI_API_KEY" ]; then
+  echo "ERROR: GEMINI_API_KEY is not set. Please export it in your shell profile."
+  exit 1
+fi
+```
+
+If the key is missing, stop and tell the user to set it using the instructions above.
 
 ## Configuration
 
 **Model**: `gemini-3-pro-image-preview`
 
-**API Key Location**: `plugins/image-generator/skills/image-generator/.env`
-
-## How to Use the API Key
-
-When generating images, read the API key from the skill's .env file:
-
-```bash
-# Get the skill directory (where this SKILL.md is located)
-SKILL_DIR="$(dirname "$(find . -path "*/image-generator/skills/image-generator/SKILL.md" 2>/dev/null | head -1)")"
-
-# Source the .env file to get GEMINI_API_KEY
-source "$SKILL_DIR/.env"
-
-# Now use $GEMINI_API_KEY in API calls
-```
-
-Or read it directly:
-```bash
-GEMINI_API_KEY=$(grep GEMINI_API_KEY /path/to/plugins/image-generator/skills/image-generator/.env | cut -d'=' -f2)
-```
+**API Key**: Read from the `GEMINI_API_KEY` environment variable
 
 ## Iterating on User-Provided Images
 
@@ -84,10 +74,6 @@ fi
 **IMPORTANT:** Always use a file-based approach for the request body. Base64-encoded images are too large for command-line arguments and will cause "argument list too long" errors.
 
 ```bash
-# Read API key from skill's .env
-SKILL_DIR="/path/to/plugins/image-generator/skills/image-generator"
-source "$SKILL_DIR/.env"
-
 # User's edit request
 EDIT_PROMPT="Add a santa hat to the person in this image"
 
@@ -152,11 +138,6 @@ For iterating on images, always use file-based requests:
 IMG_PATH="/path/to/image.png"
 EDIT_PROMPT="Make the background a sunset beach"
 OUTPUT_PATH="edited_output.png"
-SKILL_DIR="/path/to/plugins/image-generator/skills/image-generator"
-
-# Source API key
-source "$SKILL_DIR/.env"
-
 # Detect mime type and encode
 MIME_TYPE=$([[ "$IMG_PATH" == *.png ]] && echo "image/png" || echo "image/jpeg")
 IMG_BASE64=$(base64 -i "$IMG_PATH" 2>/dev/null || base64 -w0 "$IMG_PATH")
@@ -204,10 +185,6 @@ To combine elements from multiple images (also uses file-based approach):
 IMG1_PATH="/path/to/image1.png"
 IMG2_PATH="/path/to/image2.png"
 PROMPT="Put the dress from the first image on the person in the second image"
-SKILL_DIR="/path/to/plugins/image-generator/skills/image-generator"
-
-source "$SKILL_DIR/.env"
-
 IMG1_BASE64=$(base64 -i "$IMG1_PATH" 2>/dev/null || base64 -w0 "$IMG1_PATH")
 IMG2_BASE64=$(base64 -i "$IMG2_PATH" 2>/dev/null || base64 -w0 "$IMG2_PATH")
 

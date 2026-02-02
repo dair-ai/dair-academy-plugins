@@ -15,22 +15,16 @@ Generate and edit images using Google's Gemini Nano Banana Pro model (`gemini-3-
 
 ## Setup (Required)
 
-Before using this skill, you must configure your Gemini API key:
+Before using this plugin, you must set your Gemini API key as an environment variable:
 
 1. **Get a free API key** from [Google AI Studio](https://aistudio.google.com/)
 
-2. **Create the .env file** in the skill folder:
+2. **Export the key** in your shell profile (`~/.zshrc`, `~/.bashrc`, etc.):
    ```bash
-   cd plugins/image-generator/skills/image-generator/
-   cp .env.example .env
+   export GEMINI_API_KEY="your_api_key_here"
    ```
 
-3. **Add your API key** to the `.env` file:
-   ```
-   GEMINI_API_KEY=your_actual_api_key_here
-   ```
-
-> **Note:** The `.env` file is gitignored and will not be committed to version control. Each user must create their own.
+3. **Restart your terminal** or run `source ~/.zshrc` (or `~/.bashrc`)
 
 ## Usage
 
