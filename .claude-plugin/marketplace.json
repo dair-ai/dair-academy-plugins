@@ -10,6 +10,12 @@
       "source": "./plugins/image-generator",
       "description": "Generate and edit images using Gemini's Nano Banana Pro model with text-to-image, editing, and multi-image composition",
       "author": { "name": "DAIR.AI" }
+    },
+    {
+      "name": "llm-council",
+      "source": "./plugins/llm-council",
+      "description": "Orchestrate multiple open-weight LLMs via Fireworks AI to deliberate on queries using Karpathy's LLM Council concept — models respond, rank each other, and a Chairman synthesizes the final answer",
+      "author": { "name": "DAIR.AI" }
     }
   ]
 }

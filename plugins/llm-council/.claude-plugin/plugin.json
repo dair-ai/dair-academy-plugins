@@ -1,0 +1,6 @@
+{
+  "name": "llm-council",
+  "description": "Orchestrate multiple open-weight LLMs via Fireworks AI to deliberate on queries using Karpathy's LLM Council concept. Models respond individually, rank each other's responses, then a Chairman synthesizes the best answer. Powered entirely by fast, affordable open-weight models on Fireworks.",
+  "version": "1.0.0",
+  "author": "DAIR.AI"
+}
