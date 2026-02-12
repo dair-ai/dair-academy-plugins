@@ -28,7 +28,7 @@ All models are open-weight and run on Fireworks AI:
 
 ### 1. Get a Fireworks AI API Key
 
-Sign up for a free account at [app.fireworks.ai](https://app.fireworks.ai/) and grab your API key.
+Create a Fireworks AI account at [fireworks.ai](https://fireworks.ai/) and grab your API key from the dashboard.
 
 ### 2. Export the API Key
 
@@ -70,6 +70,5 @@ Running 5 models in parallel with ranking and synthesis requires a lot of infere
 
 ## Credits
 
-- LLM Council concept by [Andrej Karpathy](https://x.com/karpathy/status/1886955788325941490)
 - Built by [DAIR.AI](https://github.com/dair-ai)
 - Powered by [Fireworks AI](https://fireworks.ai/)

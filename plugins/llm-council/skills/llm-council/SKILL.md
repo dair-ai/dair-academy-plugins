@@ -30,7 +30,7 @@ Before running any phase, verify the Fireworks API key is set:
 ```bash
 if [ -z "$FIREWORKS_API_KEY" ]; then
   echo "ERROR: FIREWORKS_API_KEY is not set."
-  echo "Get your free API key at: https://app.fireworks.ai/"
+  echo "Create a Fireworks AI account at: https://fireworks.ai/"
   echo "Then export it in your shell profile (~/.zshrc or ~/.bashrc):"
   echo '  export FIREWORKS_API_KEY="your_api_key_here"'
   exit 1
@@ -562,7 +562,7 @@ PYEOF
 
 ## Setup
 
-1. Get a free Fireworks AI API key at https://app.fireworks.ai/
+1. Create a Fireworks AI account at https://fireworks.ai/ and grab your API key from the dashboard
 2. Export it in your shell profile:
    ```bash
    export FIREWORKS_API_KEY="your_api_key_here"

@@ -21,6 +21,7 @@ Then install any plugin:
 | Plugin | Description |
 |--------|-------------|
 | [image-generator](./plugins/image-generator) | Generate and edit images using Gemini's Nano Banana Pro model |
+| [llm-council](./plugins/llm-council) | Orchestrate multiple open-weight LLMs via Fireworks AI to deliberate on queries using the LLM Council approach |
 
 ## Contributing
 
