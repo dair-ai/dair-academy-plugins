@@ -1,5 +1,5 @@
 ---
-name: Image Generator
+name: image-generator
 description: Generate and edit images using Gemini's Nano Banana Pro model (gemini-3-pro-image-preview). Use this skill when the user asks you to generate images, create visuals, edit photos, create logos, generate product mockups, or perform any image generation/editing task.
 allowed-tools: Read, Write, Bash, WebFetch
 ---

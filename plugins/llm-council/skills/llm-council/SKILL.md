@@ -1,5 +1,5 @@
 ---
-name: LLM Council
+name: llm-council
 description: Orchestrate multiple open-weight LLMs via Fireworks AI to deliberate on queries. Models respond individually, rank each other's responses, then a Chairman synthesizes the final answer. Use this skill when the user wants multiple AI perspectives, consensus-building, or the "LLM Council" approach inspired by Karpathy. Powered by fast, affordable open-weight models on Fireworks.
 allowed-tools: Read, Write, Bash, AskUserQuestion
 ---
