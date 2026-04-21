@@ -87,6 +87,7 @@ Common figure failure modes and the style_spec patterns that fix them:
 - Nodes from different panels collapsing into one panel: require `<g transform="translate(OFFSET,0)">` groups with panel-local coordinates (enforced for Figure 2).
 - Leaf rects overlapping vertically so labels get clipped: enforce rect_pitch greater than rect_height with an explicit formula and a sanity check (enforced for Figure 1).
 - Root label overflowing its pill: pin minimum rect width in the spec (enforced for Figure 1, width=200).
+- Sibling nodes in a row overlapping horizontally (e.g. Worker A, Worker B, Worker C in an orchestrator-workers panel): enforce a deterministic rect_width and center_x formula for N nodes in a fixed-width panel, with a minimum horizontal gap between adjacent rects (enforced for Figure 2 multi-node rows).
 
 When adding a new figure or changing an existing one, follow the same pattern: declare an absolute viewport, per-element coordinates or a deterministic formula, and a hard-invariant check clause at the end of the description.
 
