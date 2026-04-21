@@ -88,6 +88,9 @@ Common figure failure modes and the style_spec patterns that fix them:
 - Leaf rects overlapping vertically so labels get clipped: enforce rect_pitch greater than rect_height with an explicit formula and a sanity check (enforced for Figure 1).
 - Root label overflowing its pill: pin minimum rect width in the spec (enforced for Figure 1, width=200).
 - Sibling nodes in a row overlapping horizontally (e.g. Worker A, Worker B, Worker C in an orchestrator-workers panel): enforce a deterministic rect_width and center_x formula for N nodes in a fixed-width panel, with a minimum horizontal gap between adjacent rects (enforced for Figure 2 multi-node rows).
+- Panel contents drifting to the left or right edge instead of sitting in the middle of the panel background: pin each group's translate offset to match the panel background's x position (10, 270, 530) and center all content on panel-local x=120 (enforced for Figure 2).
+- Figures emitted in the wrong numeric order because the model preferred a different narrative flow: require the captions to use the exact IDs from required_figures in sequence (Figure 1 before Figure 2 before Figure 3), even if it means placing two figures in the same section (enforced via hard_rules_for_generation).
+- Right-side labels on the stack diagram getting clipped at the viewport edge: widen the stack SVG viewport to 720 and require role-text tspans to fit within x=710 (enforced for Figure 3).
 
 When adding a new figure or changing an existing one, follow the same pattern: declare an absolute viewport, per-element coordinates or a deterministic formula, and a hard-invariant check clause at the end of the description.
 
