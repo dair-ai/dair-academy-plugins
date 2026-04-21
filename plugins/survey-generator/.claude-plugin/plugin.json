@@ -1,0 +1,8 @@
+{
+  "name": "survey-generator",
+  "description": "Generate polished, single-file HTML survey papers on any AI/ML topic. The invoking agent curates a research bundle from a public anchor resource, then Kimi K2.6 on Fireworks AI generates an academic-style HTML artifact with inline SVG figures, numbered sections, and a References list.",
+  "version": "1.0.0",
+  "author": {
+    "name": "DAIR.AI"
+  }
+}

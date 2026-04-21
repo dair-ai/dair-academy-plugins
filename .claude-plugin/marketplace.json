@@ -16,6 +16,12 @@
       "source": "./plugins/llm-council",
       "description": "Orchestrate multiple open-weight LLMs via Fireworks AI to deliberate on queries using Karpathy's LLM Council concept — models respond, rank each other, and a Chairman synthesizes the final answer",
       "author": { "name": "DAIR.AI" }
+    },
+    {
+      "name": "survey-generator",
+      "source": "./plugins/survey-generator",
+      "description": "Generate polished, single-file HTML survey papers on any AI/ML topic. The agent curates a research bundle from a public anchor resource and Kimi K2.6 on Fireworks AI writes the academic artifact with inline SVG figures, numbered sections, and a References list in one call.",
+      "author": { "name": "DAIR.AI" }
     }
   ]
 }

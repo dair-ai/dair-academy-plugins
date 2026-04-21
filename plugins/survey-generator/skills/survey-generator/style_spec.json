@@ -1,0 +1,84 @@
+{
+  "reference_paper": "Gao et al. 2023, Retrieval-Augmented Generation for Large Language Models: A Survey (arXiv:2312.10997)",
+  "why_reference": "Clean academic layout, memorable taxonomy tree, paradigm comparison figure, structured progression from foundations to methods to evaluation. Good anchor for an agent harness survey.",
+  "layout": {
+    "format": "single self-contained HTML file, academic two-column inspired but responsive on modern browsers",
+    "page_width": "max-width 1100px, centered",
+    "columns": "two-column body text on viewport >= 900px, single column on mobile",
+    "margins": "generous, academic paper feel",
+    "background": "warm off-white (#fbfaf6 or similar)",
+    "body_text_color": "near-black (#1a1a1a)"
+  },
+  "typography": {
+    "body_font": "Georgia, 'Times New Roman', serif",
+    "heading_font": "Georgia, serif with slightly heavier weight",
+    "monospace": "SFMono-Regular, Menlo, Consolas, monospace",
+    "body_size": "15px or 16px, line-height 1.55",
+    "section_numbering": "numbered sections and subsections like 1, 1.1, 2, 2.1",
+    "title_size": "large, centered on title block",
+    "author_and_affiliation": "centered under title, smaller italic"
+  },
+  "structural_elements": {
+    "title_block": "Paper title, author placeholder, affiliation placeholder (Anonymous / DAIR Research Notes), date",
+    "abstract": "Italicized paragraph labeled 'Abstract', single column, set off with a subtle border or spacing",
+    "keywords": "line of 4 to 6 keywords below the abstract",
+    "section_headings": "bold, numbered, flush left",
+    "subsection_headings": "bold italic, numbered",
+    "paragraphs": "justified text, indented first line optional",
+    "inline_citations": "parenthetical like (Yao et al., 2022) matching bibliography keys",
+    "references_section": "numbered list, hanging indent, final section"
+  },
+  "required_figures": [
+    {
+      "id": "Figure 1",
+      "caption": "Taxonomy of the surveyed field. Derive node labels from research_bundle.taxonomy.",
+      "description": "Horizontal taxonomy tree rendered as inline SVG. Three vertical columns: root on the left, branches in the middle, leaves on the right. The viewport MUST be tall enough to stack every leaf without overlap: compute viewport_height as sum_over_branches(max(1, children_count) * 28) + 40 and set it explicitly, and set viewport_width to 820. Use preserveAspectRatio default.\n\nROOT NODE: one rounded rect at x=20, y=(viewport_height/2 - 18), width=200, height=36, rx=6, fill #8a2a2b. Text: bold Georgia 14px, fill #fbfaf6, text-anchor middle, x=120, y=(root_y + 23). The width of 200 guarantees 'Agentic Engineering' and similar labels fit; do not shrink below 200 even if the label is short.\n\nBRANCH COLUMN: one rounded rect per entry in research_bundle.taxonomy.branches, all at x=260, width=200, height=32, rx=4, fill #f0efe9, stroke #1a1a1a at 1.2. The vertical position of branch i must be the vertical center of its own leaf block (see below), minus 16. Label: Georgia 12px, text-anchor middle, x=360, y=(branch_y + 20).\n\nLEAF COLUMN: every leaf rect has x=500, width=300, height=22, rx=3, fill #fbfaf6, stroke #c0bdb0 at 0.8. The vertical pitch between consecutive leaves is EXACTLY 28 (rect height 22 plus 6px gap). The leaf block for branch i starts at cumulative_y, which is 20 for branch 0 and cumulative_y_of_previous_branch + 28 * children_count_of_previous_branch for branch i > 0. Within a branch's leaf block, leaf j is at y = branch_block_start_y + 28 * j. Leaf label: Georgia 10px, text-anchor middle, x=650, y=(leaf_y + 15). A leaf rect MUST never visually overlap another leaf rect, and leaf text MUST never cross a rect boundary.\n\nCONNECTORS: from the right edge of the root (x=220, y=root_y+18) to the left edge of each branch (x=260, y=branch_y+16), draw one smooth cubic bezier per branch. From the right edge of each branch (x=460, y=branch_y+16) to the left edge of each of its leaves (x=500, y=leaf_y+11), draw one short horizontal line per leaf.\n\nHARD INVARIANTS (check before emitting): no two rects in the same column have overlapping y ranges; every label stays inside its rect; viewport height equals sum_over_branches(children_count) * 28 + 40 (with a minimum of 360); bezier connectors use C commands, not L commands.",
+      "element_budget": "roughly 60 to 80 SVG elements"
+    },
+    {
+      "id": "Figure 2",
+      "caption": "Three paradigms of the surveyed field. Derive panels from research_bundle.paradigms.",
+      "description": "Three side-by-side panels as inline SVG, viewport exactly 780 wide by 280 tall. Each panel corresponds to an entry in research_bundle.paradigms (exactly three paradigms). CRITICAL LAYOUT CONTRACT: the three panel background rectangles are fixed at x=10 width=240, x=270 width=240, and x=530 width=240, all with y=10 height=260, rx=6, fill #faf9f4, stroke #d6d3c4. Every node and connector that belongs to paradigm index i MUST be rendered inside the interior of panel i. The interior x ranges are: panel 1 x in [30, 230], panel 2 x in [290, 490], panel 3 x in [550, 750]. The interior y range for nodes is [55, 250] in every panel (title sits at y=32). REQUIRED IMPLEMENTATION: wrap each panel's nodes and connectors in a single <g transform='translate(OFFSET,0)'> group where OFFSET is 0 for panel 1, 260 for panel 2, and 520 for panel 3, and then use panel-local x coordinates in the range [20, 220] inside every group. Do NOT reuse the same absolute x coordinates for all three paradigms. Panel titles sit at y=32, bold Georgia 13px, text-anchor middle, x at the panel's horizontal center (130, 390, 650). Define a single <marker id='arrow'> with a small filled triangle and reuse it via marker-end on directional connectors. Render paradigm.nodes as rounded rectangles (rx=4, fill #f0efe9, stroke #1a1a1a at 1.2, Georgia 11px labels, text-anchor middle). Draw connectors described by paradigm.flow; flow strings use arrow syntax inside the data file (for example 'Observe -> Reason -> Act -> Observe' means a three-node cycle). Convert every such directed relation into an arrowed connector. If paradigm.flow contains 'bi:' prefix, render a bidirectional pair of arrows. Keep node sizing consistent across all three panels. This arrow notation appears only inside data files; the body prose must still avoid arrow symbols. Before closing the SVG, visually verify that no node rectangle from panel i overlaps the background of panel j for i != j.",
+      "element_budget": "roughly 60 to 80 SVG elements"
+    },
+    {
+      "id": "Figure 3",
+      "caption": "Representative stack for the surveyed field. Derive layers from research_bundle.stack.",
+      "description": "Vertical layered stack diagram rendered as inline SVG, viewport approximately 560 wide by 360 tall. One horizontal layer bar per entry in research_bundle.stack (ordered bottom-to-top as given in the array), each approximately 360 wide and 44 tall with rounded corners rx=4 and at least 8px of vertical gap between layers. Use a subtle fill gradient across the stack by varying fills from bottom to top through #e8e6dc, #ece9df, #f0ede2, #f4f1e6, #f8f5e9, #fbfaf6 (cycle or interpolate if there are more or fewer than six layers). Add a left accent bar (fill #8a2a2b, width 4) running the full height of the bottom-most layer only, to emphasize its foundational role. Layer label (research_bundle.stack[i].name) centered inside each bar in Georgia bold 13px. To the right of each bar, render research_bundle.stack[i].role as a short italic descriptive phrase (about 6 to 10 words) in Georgia 11px color #6b6b6b, vertically centered.",
+      "element_budget": "roughly 40 SVG elements"
+    }
+  ],
+  "figure_quality_note": "Figures should read as polished academic figures, not quick wireframes. Maintain a consistent visual vocabulary across all three: identical stroke weights, identical corner radii, identical typography (Georgia serif), and shared marker definitions for arrowheads. Avoid gradients and filters, but do use subtle fill differentiation, rounded corners, and bezier curves where appropriate. Every label must have enough padding to never touch a border or another label.",
+  "required_tables": [
+    {
+      "id": "Table 1",
+      "caption": "Representative systems across the surveyed dimensions. Derive columns from research_bundle.table.columns and rows from research_bundle.table.rows.",
+      "columns_source": "research_bundle.table.columns (array of 4 to 6 short column headers).",
+      "rows_source": "research_bundle.table.rows (array of 8 to 12 objects, one per representative system, with a value for every column)."
+    }
+  ],
+  "color_palette": {
+    "background": "#fbfaf6",
+    "text": "#1a1a1a",
+    "accent": "#8a2a2b",
+    "muted": "#6b6b6b",
+    "rule_lines": "#d6d3c4"
+  },
+  "tone_and_voice": {
+    "register": "academic survey, measured, precise",
+    "person": "third person, no first-person voice",
+    "claims": "descriptive rather than promotional, hedged where appropriate",
+    "avoid": ["marketing language", "exclamation points", "informal contractions", "em dashes", "arrow symbols in prose"]
+  },
+  "hard_rules_for_generation": [
+    "Output exactly one self-contained HTML document. No external CSS, no external JS, no external images, no web fonts. Inline everything.",
+    "All figures must be rendered as inline SVG elements within the HTML.",
+    "Cite only bibliography entries that appear in the provided research_bundle. Do not invent citations.",
+    "Use the section structure from the research_bundle. Do not add or remove sections.",
+    "Total body length target: roughly 5000 to 6500 words across all sections combined. Each section should carry substantive discussion (at least 3 paragraphs) and integrate multiple cited works. Finish all sections and the References section before reaching the token budget.",
+    "Generate sections in order. Place figures inside their sections. If the token budget is tight, shorten prose rather than dropping sections or references.",
+    "Do not include any content before <!DOCTYPE html> or after </html>.",
+    "Do not use em dashes or arrow symbols in body prose.",
+    "Produce a References section at the end that lists every bibliography entry in numeric order, formatted consistently."
+  ]
+}
