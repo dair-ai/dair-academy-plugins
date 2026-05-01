@@ -2,6 +2,8 @@
 
 A Claude Code plugin for starting, structuring, growing, querying, and maintaining reusable research wikis. Each wiki is a standalone folder with its own sources, compiled pages, derived artifacts, prompts, and local configuration — built around a per-wiki `wiki.config.md` so structure and style can vary by use case.
 
+> 🎥 **Watch the walkthrough**: [How to use the wiki-builder skill](https://academy.dair.ai/events/cmnivyzyp001n04k1rnozju2n) on DAIR Academy.
+
 ## How It Works
 
 The skill is intentionally general. Rather than hard-coding a single wiki layout, it scaffolds a clean starting structure and then defers to each wiki's local `wiki.config.md` for purpose, audience, page types, style rules, and update workflow.
