@@ -22,6 +22,12 @@
       "source": "./plugins/survey-generator",
       "description": "Generate polished, single-file HTML survey papers on any AI/ML topic. The agent curates a research bundle from a public anchor resource and Kimi K2.6 on Fireworks AI writes the academic artifact with inline SVG figures, numbered sections, and a References list in one call.",
       "author": { "name": "DAIR.AI" }
+    },
+    {
+      "name": "wiki-builder",
+      "source": "./plugins/wiki-builder",
+      "description": "Start, structure, grow, query, and maintain reusable research wikis. Each wiki is a standalone folder with its own sources, compiled pages, prompts, and per-wiki config — supports research, paper, domain, product, person, organization, and project flavors.",
+      "author": { "name": "DAIR.AI" }
     }
   ]
 }

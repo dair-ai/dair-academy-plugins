@@ -1,0 +1,8 @@
+{
+  "name": "wiki-builder",
+  "description": "Start, structure, grow, query, and maintain reusable research wikis. Configurable per-wiki structure for papers, topics, projects, products, people, organizations, or ongoing research areas.",
+  "version": "1.0.0",
+  "author": {
+    "name": "DAIR.AI"
+  }
+}

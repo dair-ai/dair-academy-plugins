@@ -23,6 +23,7 @@ Then install any plugin:
 | [image-generator](./plugins/image-generator) | Generate and edit images using Gemini's Nano Banana Pro model |
 | [llm-council](./plugins/llm-council) | Orchestrate multiple open-weight LLMs via Fireworks AI to deliberate on queries using the LLM Council approach |
 | [survey-generator](./plugins/survey-generator) | Generate polished, single-file HTML survey papers on any AI/ML topic, powered by Kimi K2.6 on Fireworks AI |
+| [wiki-builder](./plugins/wiki-builder) | Start, structure, grow, query, and maintain reusable research wikis with per-wiki configurable structure and flavors |
 
 ## Contributing
 
