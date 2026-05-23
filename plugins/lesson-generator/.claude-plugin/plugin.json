@@ -1,0 +1,8 @@
+{
+  "name": "lesson-generator",
+  "description": "Generate compact, standalone multi-lesson course artifacts with navigation, objectives, flashcards, quizzes, and source links",
+  "version": "1.0.0",
+  "author": {
+    "name": "DAIR.AI"
+  }
+}
