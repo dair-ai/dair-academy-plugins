@@ -26,6 +26,10 @@ Then install any plugin:
 | [survey-generator](./plugins/survey-generator) | Generate polished, single-file HTML survey papers on any AI/ML topic, powered by Kimi K2.6 on Fireworks AI |
 | [wiki-builder](./plugins/wiki-builder) | Start, structure, grow, query, and maintain reusable research wikis with per-wiki configurable structure and flavors |
 
+## Try These Without Setup
+
+Most of these skills also run inside the [DAIR Academy AI Builder](https://academy.dair.ai/) — the easiest way to try them without installing anything locally.
+
 ## Contributing
 
 We welcome community contributions. To add a plugin:
