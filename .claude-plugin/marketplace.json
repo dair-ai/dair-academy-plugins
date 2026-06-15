@@ -18,6 +18,12 @@
       "author": { "name": "DAIR.AI" }
     },
     {
+      "name": "learn",
+      "source": "./plugins/learn",
+      "description": "Help users learn topics through adaptive tutoring, practice exercises, retrieval checks, study plans, and feedback.",
+      "author": { "name": "DAIR.AI" }
+    },
+    {
       "name": "llm-council",
       "source": "./plugins/llm-council",
       "description": "Orchestrate multiple open-weight LLMs via Fireworks AI to deliberate on queries using Karpathy's LLM Council concept — models respond, rank each other, and a Chairman synthesizes the final answer",

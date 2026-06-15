@@ -1,0 +1,8 @@
+{
+  "name": "learn",
+  "description": "Help users learn topics through adaptive tutoring, practice exercises, retrieval checks, study plans, and feedback.",
+  "version": "1.0.0",
+  "author": {
+    "name": "DAIR.AI"
+  }
+}
