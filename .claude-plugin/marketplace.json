@@ -36,6 +36,12 @@
       "author": { "name": "DAIR.AI" }
     },
     {
+      "name": "youtube-notetaker",
+      "source": "./plugins/youtube-notetaker",
+      "description": "Turn YouTube talks into local study deep-dives with extracted slide images, timestamped transcripts, editable notes, and a bundled viewer backed by markdown files.",
+      "author": { "name": "DAIR.AI" }
+    },
+    {
       "name": "wiki-builder",
       "source": "./plugins/wiki-builder",
       "description": "Start, structure, grow, query, and maintain reusable research wikis. Each wiki is a standalone folder with its own sources, compiled pages, prompts, and per-wiki config — supports research, paper, domain, product, person, organization, and project flavors.",

@@ -25,6 +25,7 @@ Then install any plugin:
 | [learn](./plugins/learn) | Help users learn topics through adaptive tutoring, practice exercises, study plans, and feedback |
 | [llm-council](./plugins/llm-council) | Orchestrate multiple open-weight LLMs via Fireworks AI to deliberate on queries using the LLM Council approach |
 | [survey-generator](./plugins/survey-generator) | Generate polished, single-file HTML survey papers on any AI/ML topic, powered by Kimi K2.6 on Fireworks AI |
+| [youtube-notetaker](./plugins/youtube-notetaker) | Turn YouTube talks into local study deep-dives with extracted slides, timestamped transcripts, editable notes, and a bundled markdown-backed viewer |
 | [wiki-builder](./plugins/wiki-builder) | Start, structure, grow, query, and maintain reusable research wikis with per-wiki configurable structure and flavors |
 
 ## Try These Without Setup

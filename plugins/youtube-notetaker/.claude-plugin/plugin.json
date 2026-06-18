@@ -1,0 +1,8 @@
+{
+  "name": "youtube-notetaker",
+  "description": "Turn YouTube talks into local study deep-dives with extracted slide images, timestamped transcripts, editable notes, and a bundled viewer backed by markdown files.",
+  "version": "1.0.0",
+  "author": {
+    "name": "DAIR.AI"
+  }
+}
