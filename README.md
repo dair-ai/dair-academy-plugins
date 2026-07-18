@@ -27,6 +27,7 @@ Then install any plugin:
 | [survey-generator](./plugins/survey-generator) | Generate polished, single-file HTML survey papers on any AI/ML topic, powered by Kimi K2.6 on Fireworks AI |
 | [youtube-notetaker](./plugins/youtube-notetaker) | Turn YouTube talks into local study deep-dives with extracted slides, timestamped transcripts, editable notes, and a bundled markdown-backed viewer |
 | [wiki-builder](./plugins/wiki-builder) | Start, structure, grow, query, and maintain reusable research wikis with per-wiki configurable structure and flavors |
+| [x-agent-intelligence](./plugins/x-agent-intelligence) | Build readable AI and agent intelligence feeds from the official X MCP server |
 
 ## Try These Without Setup
 

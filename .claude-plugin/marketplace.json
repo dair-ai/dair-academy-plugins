@@ -46,6 +46,12 @@
       "source": "./plugins/wiki-builder",
       "description": "Start, structure, grow, query, and maintain reusable research wikis. Each wiki is a standalone folder with its own sources, compiled pages, prompts, and per-wiki config — supports research, paper, domain, product, person, organization, and project flavors.",
       "author": { "name": "DAIR.AI" }
+    },
+    {
+      "name": "x-agent-intelligence",
+      "source": "./plugins/x-agent-intelligence",
+      "description": "Build readable AI and agent intelligence feeds from the official X MCP server, with configurable sources, summaries, filters, avatars, media, and links back to original posts.",
+      "author": { "name": "DAIR.AI" }
     }
   ]
 }

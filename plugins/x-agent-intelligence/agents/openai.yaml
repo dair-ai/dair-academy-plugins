@@ -1,0 +1,4 @@
+interface:
+  display_name: "X Agent Intelligence"
+  short_description: "Build an X-powered agent intelligence feed"
+  default_prompt: "Use $x-agent-intelligence to build a self-contained local feed from my X MCP connection; ask for my source handles if needed, save feed.html, and validate it."

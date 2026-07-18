@@ -1,0 +1,6 @@
+{
+  "name": "x-agent-intelligence",
+  "description": "Build readable AI and agent intelligence feeds from X MCP data, with configurable sources, summaries, filters, avatars, media, and links back to original posts.",
+  "version": "1.4.0",
+  "author": {"name": "DAIR.AI"}
+}
