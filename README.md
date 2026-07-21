@@ -59,4 +59,4 @@ plugins/<plugin-name>/
 
 ## License
 
-Open source - see individual plugins for their specific licenses.
+Licensed under the [MIT License](./LICENSE). The root `LICENSE` covers the entire marketplace, and each plugin also includes its own `LICENSE` file.
